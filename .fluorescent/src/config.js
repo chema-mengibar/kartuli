@@ -1,0 +1,15 @@
+export default {
+  server:{
+    url : '', 
+    port : '',
+  },
+  actions:{
+    save: true,
+    connect: true,
+    add: true,
+    ecco: true,
+    delete: true,
+    modify: true,
+  },
+  layout: ['atom','molecule','organism','page'],
+}
