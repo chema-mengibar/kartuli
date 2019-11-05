@@ -1,23 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+var HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin')
+require('dotenv').config();
 
 module.exports = function( env, argv) {
 
-  const isEnvDevelopment = env === 'development';
-  const isEnvProduction = env === 'production';
+  // const isEnvDevelopment = env === 'development';
+  // const isEnvProduction = env === 'production';
 
   const isDevelopment = argv.mode === 'development';
 
   const replaceEnv = {
-    raw:{
-      "PUBLIC_URL": 'publicUrl',
-    }
+    domain:  isDevelopment ? 'http://localhost:3000/' : process.env.DOMAIN,
   }
-
-  /*
-  process.argv.includes('--profile');
-  process.env.EXTEND_ESLINT === 'true'
-  */
 
   return {
     mode: argv.mode,
@@ -43,7 +38,7 @@ module.exports = function( env, argv) {
           exclude: /node_modules/,
           use: ['babel-loader'] 
           // use: ['react-hot-loader/webpack', 'babel-loader'] 
-        }
+        },
       ]
     },
     devServer: {
@@ -51,6 +46,7 @@ module.exports = function( env, argv) {
       index: 'index.html',
       hot: true,
       quiet: true,
+      historyApiFallback: true,
       // allowedHosts: ['localhost'],
       // port: 3000,
       // publicPath: '/dist',
@@ -61,15 +57,21 @@ module.exports = function( env, argv) {
         Object.assign(
           {},
           {
-            template: path.resolve( __dirname, 'public/index.html' ),
+            template: path.resolve( __dirname, 'src/index.html' ),
+            filename: 'index.html',
             inject: false 
           },
-          isEnvProduction ?
+          isDevelopment ?
           { }
           : undefined
         )
-      )
+      ),
+      new HtmlReplaceWebpackPlugin([
+        {
+          pattern: '___DOMAIN___',
+          replacement: replaceEnv.domain
+        },
+      ])
     ]
   }
-
 };

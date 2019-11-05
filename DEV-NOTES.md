@@ -1,5 +1,8 @@
 # Dev Notes
 
+## React routing
+- https://reacttraining.com/react-router/web/guides/quick-start
+
 ## Jest
 - https://jestjs.io/docs/en/getting-started
 - https://jestjs.io/docs/en/api
