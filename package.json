@@ -72,7 +72,6 @@
   },
   "homepage": "https://github.com/chema-mengibar/kartuli#readme",
   "devDependencies": {
-    "@storybook/react": "^5.2.5",
-    "string-replace-loader": "^2.2.0"
+    "@storybook/react": "^5.2.5"
   }
 }
