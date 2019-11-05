@@ -1,5 +1,11 @@
 # Dev Notes
 
+## Jest
+- https://jestjs.io/docs/en/getting-started
+- https://jestjs.io/docs/en/api
+- https://jestjs.io/docs/en/expect
+
+
 # ignoring files
 See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
