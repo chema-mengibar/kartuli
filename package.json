@@ -59,7 +59,8 @@
     "build": "webpack",
     "serve": "node ./server/index.js",
     "start": "webpack-dev-server --port 3000 --mode development --config webpack.config.js",
-    "test": "jest",
+    "test": "jest --config ./jest.config.js",
+    "test:watch": "jest --config ./jest.config.js --watch",
     "storybook": "start-storybook --ci --port 3001"
   },
   "author": "chema-mengibar",
