@@ -8,10 +8,13 @@ import {
 
 import { hot } from 'react-hot-loader';
 
+import Routes from './helpers/routes'
 import Server from './helpers/server'
 import AppContext from './helpers/contexts/App.context'
 
 import {Lesson} from './components/pages/lesson/lesson'
+import {Intro} from './components/pages/intro/intro'
+import {Menu} from './components/pages/menu/menu'
 
 function App() {
 
@@ -28,26 +31,27 @@ function App() {
       {stateApp.name}
       <nav>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/lesson">Lesson</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
+            {
+              Routes('main').map( (item, idt) => {
+               return ( 
+                  <li key={`menu-${idt}`}>
+                    <Link to={item.link}>{item.label}</Link>
+                  </li>
+                )
+              })
+            }
           </ul>
         </nav>
         <Switch>
           <Route path="/lesson">
-            <Lesson> Lesson </Lesson>
+            <Lesson />
           </Route>
-          <Route path="/users">
-            <div> Users</div>
+          <Route path="/menu">
+            <Menu />
           </Route>
+         
           <Route path="/">
-            <div> Home</div>
+            <Intro />
           </Route>
         </Switch>
       </Router>

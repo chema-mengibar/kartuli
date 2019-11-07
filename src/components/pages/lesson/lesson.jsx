@@ -8,13 +8,10 @@ import {
   useParams
 } from "react-router-dom";
 
+import {LessonLetters} from '../lesson-letters/lesson-letters'
+import Routes from '../../../helpers/routes'
+
 import {LessonWrapper} from './lesson.styles'
-
-function Topic() {
-  let { topicId } = useParams();
-  return <h3>Requested topic ID: {topicId}</h3>;
-}
-
 
 export const Lesson = (props) => {
 
@@ -23,22 +20,28 @@ export const Lesson = (props) => {
   return (
     <LessonWrapper>
       <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
-        </li>
+        {
+          Routes('lesson').map( (item, idt) => {
+            return ( 
+              <li key={`lesson-${idt}`}>
+                 <Link to={`${match.url}${item.link}`}>{item.label}</Link>
+              </li>
+            )
+          })
+        }
       </ul>
+
       <Switch>
-        <Route path={`${match.path}/:topicId`}>
-          <Topic />
+
+        <Route path={`/lesson/letters/`}>
+          Letters
+          <LessonLetters></LessonLetters>
         </Route>
+
         <Route path={match.path}>
           <h3>Please select a topic.</h3>
         </Route>
+
       </Switch>
 
     </LessonWrapper>
