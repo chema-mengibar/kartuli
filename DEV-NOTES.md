@@ -1,5 +1,14 @@
 # Dev Notes
 
+## Figma
+https://www.figma.com/file/TFCFCztFEDnyCpY2Bxushp/Kartuli?node-id=0%3A1
+
+## Color Tools
+- https://paletton.com
+- https://color.adobe.com
+-
+- https://mycolor.space
+
 ## React routing
 - https://reacttraining.com/react-router/web/guides/quick-start
 
@@ -68,3 +77,7 @@ See https://help.github.com/articles/ignoring-files/ for more about ignoring fil
 If you want your app to work offline and load faster, you can change
 unregister() to register() below. Note this comes with some pitfalls.
 Learn more about service workers: https://bit.ly/CRA-PWA
+
+## Typescript
+- tsconfig.js -> .json
+- npm install @types/styled-components

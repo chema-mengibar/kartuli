@@ -26,7 +26,7 @@ module.exports = function( env, argv) {
       filename: 'app.js'
     },
     resolve: {
-      extensions: [".jsx",".js"],
+      extensions: [".tsx", ".ts",".jsx",".js"], 
       // alias: {
       //   'react-dom': '@hot-loader/react-dom'
       // }
@@ -38,6 +38,10 @@ module.exports = function( env, argv) {
           exclude: /node_modules/,
           use: ['babel-loader'] 
           // use: ['react-hot-loader/webpack', 'babel-loader'] 
+        },
+        {
+          test: /\.ts$|\.tsx$/,
+          loader: 'ts-loader',
         },
       ]
     },

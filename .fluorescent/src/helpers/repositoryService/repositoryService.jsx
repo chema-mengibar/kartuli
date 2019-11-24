@@ -1,5 +1,7 @@
 export let repository = {}
 
+const progressTypes = ['planned','created','imported','imported-errors']
+
 function generateId( _type ){
   const prefix = 'node-' //_type
   const counter = new Date().getTime()
@@ -21,6 +23,7 @@ export const addItem = ( _type, _label, _dispatch) => {
   const newItem = {
     type: _type,
     label: _label,
+    progress: progressTypes[0],
     id: generateId( _type )
   }
   repository.items.push(newItem)
@@ -28,10 +31,19 @@ export const addItem = ( _type, _label, _dispatch) => {
 }
 
 export const modifyItem = ( _id, _label) => {
-
   const items = repository.items.map( (item)=> {
     if(item.id === _id ){
       item.label = _label
+    }
+    return item
+  })
+  repository.items = [...items]
+}
+
+export const modifyItemProgress = ( _id, _progress) => {
+  const items = repository.items.map( (item)=> {
+    if(item.id === _id ){
+      item.progress = _progress
     }
     return item
   })
@@ -42,8 +54,9 @@ export const getRepo = () =>{
   return repository
 }
  
-export const setRepo = ( repo) =>{
-  repository = {...repo}
+export const setRepo = ( repoData ) =>{
+  const repoVersioned = versionAdapter( repoData )
+  repository = {...repoVersioned}
 }
 
 export const emptyItems = ( ) =>{
@@ -100,7 +113,6 @@ export function connectFromTo( fromNode, toNode){
 }
 
 export function disconnecToFrom( toId, fromId ){
-  console.log( toId, fromId  )
   const toNode = getTreeItemById( toId )
   const filteredChildren = toNode.children.filter( childId => childId != fromId )
 
@@ -115,6 +127,18 @@ export function disconnecToFrom( toId, fromId ){
     }
   });
 }
+
+export const versionAdapter = ( repoObject ) =>{
+  // this function it´s actually not needed, because monitor.js set a default value
+  // and the node too, but it could be the adapter for future changes
+  repoObject.items.forEach( item =>{
+    if( !item.progress ){
+      item.progress = progressTypes[0]
+    }
+  } )
+  return repoObject
+}
+
 
 /* Usage: 
 

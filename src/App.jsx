@@ -11,10 +11,10 @@ import { hot } from 'react-hot-loader';
 import Routes from './helpers/routes'
 import Server from './helpers/server'
 import AppContext from './helpers/contexts/App.context'
-
 import {Lesson} from './components/pages/lesson/lesson'
 import {Intro} from './components/pages/intro/intro'
 import {Menu} from './components/pages/menu/menu'
+import ButtonCircle from './components/atoms/button-circle'
 
 function App() {
 
@@ -28,33 +28,37 @@ function App() {
   return (
     <>
      <Router>
-      {stateApp.name}
+     {stateApp.name}
       <nav>
-          <ul>
-            {
-              Routes('main').map( (item, idt) => {
-               return ( 
-                  <li key={`menu-${idt}`}>
-                    <Link to={item.link}>{item.label}</Link>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </nav>
-        <Switch>
-          <Route path="/lesson">
-            <Lesson />
-          </Route>
-          <Route path="/menu">
-            <Menu />
-          </Route>
-         
-          <Route path="/">
-            <Intro />
-          </Route>
-        </Switch>
-      </Router>
+        <ul>
+        {
+          Routes('main').map( (item, idt) => {
+            return ( 
+              <li key={`menu-${idt}`}>
+                <Link to={item.link}>{item.label}</Link>
+              </li>
+            )
+          })
+        }
+        </ul>
+      </nav>
+
+      <ButtonCircle />  
+
+      <Switch>
+        <Route path="/lesson">
+          <Lesson />
+        </Route>
+        <Route path="/menu">
+          <Menu />
+        </Route>
+        
+        <Route path="/">
+          <Intro />
+        </Route>
+      </Switch>
+
+     </Router>
     </>
   );
 }
