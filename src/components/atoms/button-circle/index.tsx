@@ -14,7 +14,7 @@ const ButtonCircle = (props:ButtonCircleProps): ReactElement => {
   return (
     <ButtonCircleStyled>
 
-      Id: {props.id} helloaa
+      Id: {props.id}
 
     </ButtonCircleStyled>
   )

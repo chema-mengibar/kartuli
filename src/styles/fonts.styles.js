@@ -2,8 +2,15 @@ import {css} from 'styled-components'
 
 export const fontCssGlobal = css`
 
+  @font-face {
+    font-family: 'Pt-Sans';
+    src : url('./static/fonts/PT-Sans/PTSans-Regular.ttf') format('truetype')
+  }
+
   body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:12px;
+    font-family: PT Sans, Arial, Helvetica, sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size:14px;
   }
 `
