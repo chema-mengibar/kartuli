@@ -3,6 +3,20 @@
 ## Figma
 https://www.figma.com/file/TFCFCztFEDnyCpY2Bxushp/Kartuli?node-id=0%3A1
 
+
+## css Prop  with styled-component
+>It is supported but opt-in.
+import {} from 'styled-components/cssprop' in a TypeScript file and it will be made available. You only need to import this once in the project.
+The {} from is important to tell TypeScript it's OK to remove the import from the code -- we just want the types. If that import remains you'll get an error.
+
+```
+import {} from 'styled-components/cssprop'
+
+
+<p css={{ padding: '5rem', border: '1px solid red' }} >Hello</p>
+```
+
+
 ## Color Tools
 - https://paletton.com
 - https://color.adobe.com
