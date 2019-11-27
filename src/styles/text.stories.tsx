@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 
@@ -24,7 +23,7 @@ storiesOf('styles/Text', module).add(
       Object
         .entries(text)
         .map( obj =>  
-          <Div className={obj[0]}>{obj[0]}</Div>
+          <Div key={obj[0]} className={obj[0]}>{obj[0]}</Div>
         ) 
     }
   </TextStories>
