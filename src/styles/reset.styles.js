@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { css } from 'styled-components';
 
-export default createGlobalStyle`
+export default css`
   /* stylelint-disable */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -58,13 +58,13 @@ export default createGlobalStyle`
     min-height: 100%;
   }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
 
-  /* *{
+  /* *:before,
+  *:after {
+   box-sizing: inherit;
+  } */
+
+  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
@@ -74,7 +74,7 @@ export default createGlobalStyle`
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-  } */
+  }
 
   button {
     background: none;

@@ -1,4 +1,4 @@
-function hexToRgbA( hex, _alpha ){
+export function hexToRgbA( hex, _alpha ){
   let c
   let alpha = _alpha || 1
   
@@ -11,8 +11,4 @@ function hexToRgbA( hex, _alpha ){
     return `rgba( ${ [(c>>16)&255, (c>>8)&255, c&255].join(',') }, ${alpha})`
   }
   throw new Error('Bad Hex')
-}
-
-export default {
-  hexToRgbA,
 }

@@ -68,7 +68,8 @@
     "start": "webpack-dev-server --port 3000 --mode development --config webpack.config.js",
     "test": "jest --config ./jest.config.js",
     "test:watch": "jest --config ./jest.config.js --watch",
-    "storybook": "start-storybook --ci --port 3001"
+    "storybook": "start-storybook --ci --port 3001",
+    "fluorescent": "npm run --prefix .fluorescent serve"
   },
   "author": "chema-mengibar",
   "license": "ISC",
