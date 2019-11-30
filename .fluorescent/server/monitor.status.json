@@ -1,257 +1,45 @@
 {
   "progress": [
     {
-      "id": "node-1574016210627",
+      "id": "node-1574612419621",
       "progress": "created"
     },
     {
-      "id": "node-1574016211972",
+      "id": "node-1575108013117",
+      "progress": "created"
+    },
+    {
+      "id": "node-1575108069675",
       "progress": "planned"
     },
     {
-      "id": "node-1574016214579",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016283766",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016296814",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016329635",
+      "id": "node-1575108091388",
       "progress": "planned"
     },
     {
-      "id": "node-1574016369825",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016497925",
+      "id": "node-1575108183548",
       "progress": "planned"
     },
     {
-      "id": "node-1574016510747",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016531903",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016547778",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016564959",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016581624",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016632867",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016665576",
+      "id": "node-1575108204722",
       "progress": "planned"
     },
     {
-      "id": "node-1574016688292",
+      "id": "node-1575108631558",
       "progress": "created"
     },
     {
-      "id": "node-1574016698641",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016744642",
+      "id": "node-1575108706769",
       "progress": "planned"
     },
     {
-      "id": "node-1574016763268",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016799314",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016824221",
+      "id": "node-1575108713533",
       "progress": "planned"
     },
     {
-      "id": "node-1574016856968",
+      "id": "node-1575108761015",
       "progress": "planned"
-    },
-    {
-      "id": "node-1574016917443",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574016938895",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574016961944",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017057231",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017104228",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017122616",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017148989",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017188130",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017195497",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017221057",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017255751",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017271914",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017334274",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1574017362342",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017376171",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574017422728",
-      "progress": "created"
-    },
-    {
-      "id": "node-1574094404658",
-      "progress": "created"
     }
   ],
-  "imports": [
-    {
-      "componentId": "node-1574016214579",
-      "childId": "node-1574016665576",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016214579",
-      "childId": "node-1574016824221",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016214579",
-      "childId": "node-1574017122616",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016214579",
-      "childId": "node-1574017148989",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016283766",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016296814",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016369825",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016531903",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016547778",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016564959",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016581624",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016632867",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016688292",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016698641",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016938895",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574016961944",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574017221057",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574017271914",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    },
-    {
-      "componentId": "node-1574017362342",
-      "childId": "node-1574094404658",
-      "connectImported": false
-    }
-  ]
+  "imports": []
 }
