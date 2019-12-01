@@ -33,7 +33,7 @@ export const Container = styled.div`
 `;
 
 storiesOf('atoms/Icon', module).add(
-  'all',
+  'Svg',
   (): ReactElement => 
   <>
     <Advice>

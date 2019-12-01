@@ -16,7 +16,7 @@ const Div = styled.div`
   margin-bottom: 10px;
 `
 
-storiesOf('styles/Text', module).add(
+storiesOf('styles | Text', module).add(
   'all',
   (): ReactElement => <TextStories>
     {  

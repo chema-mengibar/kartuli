@@ -88,7 +88,7 @@ const Color = ( {name, themObj }:ColorProps ): ReactElement => {
  };
 
 
-storiesOf('styles/theme', module).add(
+storiesOf('styles | theme', module).add(
   'Colors',
 (): ReactElement => 
   <>
