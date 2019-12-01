@@ -9,13 +9,14 @@ import {IconProps} from './icon.types'
 
 export const IconCheckLine = ({ 
    color,
+   title,
    size = 30 
   }:IconProps): ReactElement => {
 
   const viewBox = '0 0 512 512';
 
   return (
-    <IconStyled size={size}>
+    <IconStyled size={size} title={title}>
       <svg 
         viewBox={viewBox} 
         xmlns="http://www.w3.org/2000/svg"

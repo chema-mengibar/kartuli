@@ -9,13 +9,14 @@ import {IconProps} from './icon.types'
 
 export const IconSave = ({ 
    color,
+   title,
    size = 30 
   }:IconProps): ReactElement => {
 
   const viewBox = '0 0 438.533 438.533';
 
   return (
-    <IconStyled size={size}>
+    <IconStyled size={size} title={title}>
       <svg 
         viewBox={viewBox} 
         xmlns="http://www.w3.org/2000/svg"
