@@ -20,7 +20,6 @@ oS.add(
         option active
       </ButtonOption>
 
-
       <ButtonOption 
         id="click-me-selected" 
         onClick={()=> {}}
@@ -29,7 +28,6 @@ oS.add(
         option selected
       </ButtonOption>
 
-
       <ButtonOption 
         id="click-me-checked" 
         onClick={()=> {}}
@@ -37,7 +35,6 @@ oS.add(
       >
         option 3
       </ButtonOption>
-
 
       <ButtonOption 
         id="click-me-disabled" 
@@ -49,6 +46,7 @@ oS.add(
 
     </OptionContainerColumn>)
 );
+
 
 
 const LimitedOptionContainerRow = styled(OptionContainerRow)`
