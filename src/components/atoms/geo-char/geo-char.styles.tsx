@@ -13,6 +13,5 @@ export const GeoCharStyled = styled.div<{size: CharSizes}>`
     if( size ===  CharSizes.big ){
       return css` font-size: 40px;`
     }
-    }
   }}
 `;

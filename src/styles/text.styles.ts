@@ -4,9 +4,15 @@ const small = css`
   font-size: 12px;
   line-height: 16px;
 `
+
 const medium = css`
   font-size: 18px;
   line-height: 23px;
+`
+
+const normal = css`
+  font-size: 20px;
+  line-height: 20px;
 `
 
 const big = css`
@@ -76,7 +82,7 @@ export const text = {
     text-align: center;
   `,
   'buttonOptionLabel':css`
-    ${large}
+    ${normal}
     text-align: center;
   `,
   'butonSectionLabel':css`

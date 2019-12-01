@@ -1,22 +1,37 @@
 import React, {ReactElement} from 'react'
 
 import {
- 	ButtonCircleStyled,
+ 	ButtonCircleWrapper,
 } from "./button-circle.styles";
 
 
+export enum ButtonCircleSizes {
+  small,
+  normal,
+}
+
 export interface ButtonCircleProps {
   id?: string;
+  onClick: Function;
+  small?: boolean;
+  children: React.ReactNode;
 }
 
 
-const ButtonCircle = (props:ButtonCircleProps): ReactElement => {
+const ButtonCircle = ({
+  id,
+  onClick,
+  small= false,
+  children
+}:ButtonCircleProps): ReactElement => {
   return (
-    <ButtonCircleStyled>
-
-      Id: {props.id}
-
-    </ButtonCircleStyled>
+    <ButtonCircleWrapper 
+      id={`button-circle_${id}`} 
+      onClick={ ()=> onClick() }
+      size={ small ? ButtonCircleSizes.small :  ButtonCircleSizes.normal }
+    >
+      {children}
+    </ButtonCircleWrapper>
   )
  };
 
