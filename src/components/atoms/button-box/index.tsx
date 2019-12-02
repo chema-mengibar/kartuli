@@ -1,10 +1,9 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, useState, useEffect} from 'react'
 
 import {
   ButtonBoxStyled,
-  Label
+  Label,
 } from "./button-box.styles";
-
 
 export interface ButtonBoxProps {
   id?: string;
@@ -14,7 +13,6 @@ export interface ButtonBoxProps {
   children: React.ReactNode;
 }
 
-
 const ButtonBox = ({
   id,
   label,
@@ -22,11 +20,37 @@ const ButtonBox = ({
   onClick,
   children
 }:ButtonBoxProps): ReactElement => {
+
+  const [animationClick, setAnimationClick] = useState(false);
+  const [clickBlock, setClickBlock] = useState(false);
+
+  useEffect( ()=>{
+    if(animationClick){
+      console.log('animate')
+      setTimeout(() =>{ setAnimationClick(false); }, 200); // same as animation
+    }
+  },[animationClick])
+  
+  useEffect( ()=>{
+    if(clickBlock){
+      onClick();
+      setTimeout(() =>{ setClickBlock(false); }, 300);
+    }
+    return () => false;
+  },[clickBlock])
+
+  
   return (
     <ButtonBoxStyled
       id={id && `button-box_${id}`} 
-      onClick={ ()=> onClick() }
+      onClick={ ()=> {
+        if( !clickBlock ){
+          setAnimationClick(true);
+          setClickBlock(true);
+        }
+      }}
       disabled={disabled}
+      animationClick={animationClick}
     >
       {children}
       {label && <Label>{label}</Label>}

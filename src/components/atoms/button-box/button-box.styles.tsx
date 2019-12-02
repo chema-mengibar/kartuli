@@ -24,7 +24,10 @@ export const ButtonBoxContainer = styled.div`
   }
 `
 
-export const ButtonBoxStyled = styled.div<ButtonBoxProps>`
+export const ButtonBoxStyled = styled.div<{
+  animationClick: boolean
+  disabled: boolean
+}>`
   
   display:flex;
   flex-direction:column;
@@ -32,14 +35,29 @@ export const ButtonBoxStyled = styled.div<ButtonBoxProps>`
   flex:1;  
   height: 100px;
   align-items: center;
-  justify-content: space-around; 
+  justify-content: center; 
   border-radius:  8px;
   user-select: none;
   cursor:pointer;
-  background-color: black;
+  background-color: ${ theme.colors.base.l2};;
+  border: 1px solid ${ theme.colors.base.l1};
+
+  ${text.buttonLabelBig}
+  color: ${ theme.colors.base.d2 };
+
+  :hover {
+    color:red;
+  }
+
+  transition: all .2s ease-in-out;
+
+  ${({animationClick}) => animationClick && css`
+    transform: scale(.8);
+   ` 
+  }
 `;
 
 export const Label = styled.div`
-  ${text.buttonLabelSmall}
-  color: ${ theme.colors.base.l2};
+
+  margin-top:10px;
 ` 

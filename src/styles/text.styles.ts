@@ -47,14 +47,17 @@ export const text = {
     transform: uppercase;
   `,
   'buttonLabelSmall':css`
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: auto;
     text-align: center;
   `,
+
   'buttonLabelBig':css`
-    ${big}
+    font-size: 16px;
+    line-height: auto;
     text-align: center;
   `,
+
   'headerNavLabel':css`
     ${big}
   `,

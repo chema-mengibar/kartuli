@@ -30,14 +30,10 @@
     },
     {
       "id": "node-1575108706769",
-      "progress": "planned"
+      "progress": "created"
     },
     {
       "id": "node-1575108713533",
-      "progress": "planned"
-    },
-    {
-      "id": "node-1575108761015",
       "progress": "planned"
     },
     {
@@ -45,5 +41,16 @@
       "progress": "created"
     }
   ],
-  "imports": []
+  "imports": [
+    {
+      "componentId": "node-1575108706769",
+      "childId": "node-1575108761015",
+      "connectImported": false
+    },
+    {
+      "componentId": "node-1575108706769",
+      "childId": "node-1575108713533",
+      "connectImported": false
+    }
+  ]
 }
