@@ -3,9 +3,6 @@ import styled, { css } from "styled-components";
 import {theme} from '../../../styles/theme.styles'
 import { text } from '../../../styles/text.styles'
 
-import { ButtonBoxProps } from ".";
-
-
 export const ButtonBoxContainer = styled.div`
   display: flex;
   flex-direction:row;
@@ -58,6 +55,5 @@ export const ButtonBoxStyled = styled.div<{
 `;
 
 export const Label = styled.div`
-
   margin-top:10px;
 ` 

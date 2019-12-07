@@ -5,12 +5,12 @@ import {
   Label,
 } from "./button-box.styles";
 
-export interface ButtonBoxProps {
+export type ButtonBoxProps = {
   id?: string;
   label?: string;
   disabled?: boolean;
   onClick: Function;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const ButtonBox = ({

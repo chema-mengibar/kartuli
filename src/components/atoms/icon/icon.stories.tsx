@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { storiesOf } from "@storybook/react";
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 import { IconBox } from "./icon-box";
 import { IconSave } from "./icon-save";

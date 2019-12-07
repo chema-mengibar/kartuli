@@ -7,6 +7,9 @@ export const theme = {
       l1:'#E5E5E5',
       l2:'#FFFFFF',
     },
+    text:{
+      _:'#000000'
+    },
     accent:{
       default:{
         d2:'#5180C9',

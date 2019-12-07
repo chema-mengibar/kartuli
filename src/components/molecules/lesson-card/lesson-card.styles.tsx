@@ -27,6 +27,7 @@ export const Content = styled.div`
   flex-direction: column;
   height: calc( 100% - ${imageHeight}px );
   justify-content: space-evenly;
+  color: ${ theme.colors.text._}
 `
 
 export const Title = styled.div`
@@ -40,7 +41,7 @@ export const Description = styled.div`
 
 export const Progress = styled.div`
   ${text.cardProgress}
-  color: ${ theme.colors.base._}
+  color: ${ theme.colors.base.d1}
 `
 
 
@@ -61,5 +62,5 @@ export const LessonCardContainer = styled.div`
     margin-left: ${cardsMargin}px;
   }
 
-  transform: scale(.8);
+  /* transform: scale(.8); */
 `;
