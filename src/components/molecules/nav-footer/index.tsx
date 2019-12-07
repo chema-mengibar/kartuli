@@ -8,6 +8,7 @@ import { theme } from '../../../styles/theme.styles'
 
 import {
    NavFooterStyled,
+   ContainerStyled
 } from "./nav-footer.styles";
 
 
@@ -33,21 +34,23 @@ const NavFooter = ({
 const iconColor = theme.colors.text._
 
   return (
-    <NavFooterStyled id="nav-footer">
-      {
-        items && items.map( item =>{
-          return (
-            <ButtonBox 
-              id={item.id} 
-              label={item.label}
-              onClick={item.onClick}
-            > 
-              {item.icon === 'icon-next' && <IconNext color={iconColor} /> } 
-              {item.icon === 'icon-previous' && <IconPrevious color={iconColor} /> } 
-              {item.icon === 'icon-goto' && <IconGoto color={iconColor} /> } 
-            </ButtonBox>)
-        })
-      }
+    <NavFooterStyled id="nav-footer" role="navigation">
+      <ContainerStyled>
+        {
+          items && items.map( item =>{
+            return (
+              <ButtonBox 
+                id={item.id} 
+                label={item.label}
+                onClick={item.onClick}
+              > 
+                {item.icon === 'icon-next' && <IconNext color={iconColor} /> } 
+                {item.icon === 'icon-previous' && <IconPrevious color={iconColor} /> } 
+                {item.icon === 'icon-goto' && <IconGoto color={iconColor} /> } 
+              </ButtonBox>)
+          })
+        }
+      </ContainerStyled>
     </NavFooterStyled>
   )
  };

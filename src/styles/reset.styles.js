@@ -24,7 +24,7 @@ export default css`
   }
 
   article, aside, details, figcaption, figure, 
-  footer, header, hgroup, menu, nav, section {
+  footer, header, hgroup, menu, nav, section, main {
     display: block;
   }
 
