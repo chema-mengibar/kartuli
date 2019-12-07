@@ -18,7 +18,7 @@ export interface DialogProps {
   trans: string;
 }
 
-export type DirectionProp =  'left' | 'right';
+export type DirectionProp = 'left' | 'right';
 
 export interface SpeechBubbleProps {
   direction: DirectionProp;
@@ -26,7 +26,6 @@ export interface SpeechBubbleProps {
   showHelp: boolean;
   dialog: DialogProps;
 }
-
 
 const SpeechBubble = ({
   direction,
@@ -45,7 +44,7 @@ const SpeechBubble = ({
       </Content>
       <ToolBar>
         <ButtonCircle  
-          id="click-small" 
+          id="click-show-help" 
           small
           onClick={()=> {
             setIsShowHelp( !isShowHelp );

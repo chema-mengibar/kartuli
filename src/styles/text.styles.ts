@@ -74,10 +74,10 @@ export const text = {
     text-align: center;
   `,
   'listTitle':css`
-    ${big}
+    ${medium}
   `,
   'listItems':css`
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
   `,
   'buttonActionLabel':css`
