@@ -69,7 +69,7 @@
     {
       "type": "molecule",
       "label": "speech-bubble",
-      "progress": "imports-error",
+      "progress": "imports",
       "id": "node-1575707390467"
     }
   ],

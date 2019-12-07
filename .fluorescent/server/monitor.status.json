@@ -68,7 +68,7 @@
     {
       "componentId": "node-1575707390467",
       "childId": "node-1575108631558",
-      "connectImported": false
+      "connectImported": true
     }
   ]
 }
