@@ -125,7 +125,8 @@ class Monitor {
             const childItem = this.getItemById( childId );
             if( childItem ){
               const childComponentName =  childItem.label;
-              var re = new RegExp('import ' + childComponentName + ' from',"gm");
+              // var re = new RegExp('import ' + childComponentName + ' from',"gm");
+              var re = new RegExp('^import [ a-zA-Z,\-{}\_]* from [\'|\"].*\/' + childComponentName ,"gm");
               if( re.test(contents) ){
                 importsReportItem[childId] = true
               }
@@ -171,20 +172,14 @@ class Monitor {
     */
 
     const imports = {}
+
     this.report.imports.forEach( importItem =>{
-      if( Object.keys(imports).indexOf(importItem.componentId) > -1 ){
-        if( !importItem.connectImported ){
-          imports[ importItem.componentId ] = false
-        }
-      }
-      else{
-        imports[ importItem.componentId ] = true
-      }
+      imports[ importItem.componentId ] = importItem.connectImported
     })
 
     this.repo.items.forEach( nodeItem =>{ 
       if( Object.keys(imports).indexOf(nodeItem.id) > -1 ){
-        if( nodeItem.progress === 'created'){
+        if( nodeItem.progress !== 'planned'){
           nodeItem.progress = imports[nodeItem.id] ? 'imports' : 'imports-error';
         }
       }
