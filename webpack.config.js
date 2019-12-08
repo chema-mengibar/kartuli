@@ -11,8 +11,10 @@ module.exports = function( env, argv) {
   const isDevelopment = argv.mode === 'development';
 
   const replaceEnv = {
-    domain:  isDevelopment ? 'http://localhost:3000/' : process.env.DOMAIN,
+    domain: !isDevelopment ? process.env.DOMAIN : '',
   }
+
+  const netIp = '192.168.178.22'
 
   return {
     mode: argv.mode,
@@ -51,8 +53,9 @@ module.exports = function( env, argv) {
       hot: true,
       quiet: true,
       historyApiFallback: true,
-      // allowedHosts: ['localhost'],
-      // port: 3000,
+      host: netIp,
+      port: 3000,
+      // allowedHosts: ['localhost', '192.168.178.22', '0.0.0.0'],
       // publicPath: '/dist',
       // open: true,
     },

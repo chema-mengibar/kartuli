@@ -40,6 +40,7 @@ const iconColor = theme.colors.text._
           items && items.map( item =>{
             return (
               <ButtonBox 
+                key={`button-nav_${item.id}`}
                 id={item.id} 
                 label={item.label}
                 onClick={item.onClick}

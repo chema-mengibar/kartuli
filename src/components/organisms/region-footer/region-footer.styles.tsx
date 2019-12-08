@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 
-export const RegionFooterStyled = styled.div`
- 
+export const footerHeight = '115px'
 
+export const RegionFooterStyled = styled.footer`
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 `;

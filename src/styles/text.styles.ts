@@ -44,7 +44,7 @@ export const text = {
   'breadcrumb':css`
     font-size: 14px;
     line-height: 18px;
-    transform: uppercase;
+    text-transform: uppercase;
   `,
   'buttonLabelSmall':css`
     font-size: 14px;

@@ -1,9 +1,10 @@
 import React, {ReactElement} from 'react'
 
 import {Container} from '../../../styles/layout.styles'
-
+import Breadcrumb from '../../molecules/breadcrumb'
+import MockData from "../../molecules/breadcrumb/breadcrumb.mocks";
 import {
- 	RegionMainStyled,
+  RegionMainStyled,
 } from "./region-main.styles";
 
 
@@ -19,7 +20,7 @@ const RegionMain = ({
   return (
     <RegionMainStyled role="main">
       <Container>
-        main
+        <Breadcrumb links={MockData.default.links}/>
         {children}
       </Container>
     </RegionMainStyled>

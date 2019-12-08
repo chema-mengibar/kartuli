@@ -11,3 +11,9 @@
 - [ ] structure, design
 - [ ] roadmap
 - [ ] paths.js
+
+
+# NPM
+
+Package "update"
+npm uninstall update
