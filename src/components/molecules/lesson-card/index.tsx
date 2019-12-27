@@ -3,12 +3,12 @@ import React, {ReactElement} from 'react'
 import {lang} from '../../../helpers/lang'
 
 import {
-   LessonCardStyled,
-   Image,
-   Content,
-   Title,
-   Description,
-   Progress
+  LinkStyled,
+  Image,
+  Content,
+  Title, 
+  Description,
+  Progress
 } from "./lesson-card.styles";
 
 
@@ -19,6 +19,7 @@ export interface LessonCardProps {
   description: string;
   currentLessons: number;
   totalLessons: number;
+  to?: object | string
 }
 
 
@@ -28,11 +29,13 @@ const LessonCard = ({
   title,
   description,
   currentLessons,
-  totalLessons
+  totalLessons,
+  to
 }:LessonCardProps): ReactElement => {
   return (
-    <LessonCardStyled 
+    <LinkStyled 
       id={id && `lesson-card${id}`}
+      to={to}
     >
       <Image>{image}</Image>
       <Content> 
@@ -42,7 +45,7 @@ const LessonCard = ({
           {`${currentLessons} ${lang('of')} ${totalLessons} ${lang('execices')}`}
         </Progress>
       </Content>
-    </LessonCardStyled>
+    </LinkStyled>
   )
  };
 

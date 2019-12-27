@@ -25,7 +25,6 @@ export const ButtonBoxStyled = styled.div<{
   animationClick: boolean
   disabled: boolean
 }>`
-  
   display:flex;
   flex-direction:column;
   max-width: 200px;

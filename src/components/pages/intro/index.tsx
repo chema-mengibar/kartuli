@@ -1,23 +1,30 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
+import RegionMain from '../../organisms/region-main'
 
 import {
  	IntroStyled,
 } from "./intro.styles";
 
-export interface IntroProps {
 
-}
-
-const Intro = ({
+const Intro = (): ReactElement => {
   
-}:IntroProps): ReactElement => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(()=>{
+    setTimeout(() => {  setLoaded(true);  }, 3000);
+  }, [])
+
   return (
-    <IntroStyled>
-      Intro
-      <Link to={'academy'}>Academy</Link>
-    </IntroStyled>
+    <RegionMain>
+      <IntroStyled>
+        Intro
+        {
+          loaded && <Redirect to="/menu" />
+        }
+      </IntroStyled>
+    </RegionMain>
   )
  };
 

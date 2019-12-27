@@ -12,9 +12,10 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  #app{
+  #app, #root{
     display: flex;
     flex-direction: column;
     min-height:100%;
+    height: 100%;
   }
 `

@@ -21,7 +21,6 @@ const RegionFooter = (props:RegionFooterProps): ReactElement => {
   return (
     <RegionFooterStyled role="navigation">
       <Container>
-        Footer
         <NavFooter items={mockItems}/>
       </Container>
     </RegionFooterStyled>

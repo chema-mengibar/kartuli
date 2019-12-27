@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 import {theme} from '../../../styles/theme.styles'
 import {text} from '../../../styles/text.styles'
 
-export const LessonCardStyled = styled.div`
+export const LinkStyled = styled(Link)`
+  display: inline-block;
   width: 215px;
   min-width: 215px;
   height: 245px;
@@ -27,7 +29,8 @@ export const Content = styled.div`
   flex-direction: column;
   height: calc( 100% - ${imageHeight}px );
   justify-content: space-evenly;
-  color: ${ theme.colors.text._}
+  color: ${ theme.colors.text._};
+  white-space: normal;
 `
 
 export const Title = styled.div`
@@ -49,7 +52,12 @@ export const Progress = styled.div`
 const cardsMargin = 5;
 
 export const LessonCardContainer = styled.div`
-  display: flex;
+  /* display: flex; */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width:100%;
+
   > *:not(:first-child):not(:last-child){
     margin: 0 ${cardsMargin}px;
   }
