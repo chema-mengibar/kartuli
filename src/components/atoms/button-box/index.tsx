@@ -26,7 +26,6 @@ const ButtonBox = ({
 
   useEffect( ()=>{
     if(animationClick){
-      console.log('animate')
       setTimeout(() =>{ setAnimationClick(false); }, 200); // same as animation
     }
   },[animationClick])

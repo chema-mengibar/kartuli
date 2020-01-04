@@ -12,6 +12,7 @@ export const LinkStyled = styled(Link)`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 14px;
   overflow: hidden;
+  text-decoration:none;
 `;
 
 

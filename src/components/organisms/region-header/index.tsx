@@ -8,14 +8,10 @@ import {
 } from "./region-header.styles";
 
 
-export interface RegionHeaderProps {
-
-}
+export interface RegionHeaderProps {}
 
 
-const RegionHeader = ({
-
-}:RegionHeaderProps): ReactElement => {
+const RegionHeader = ({}:RegionHeaderProps): ReactElement => {
   return (
     <RegionHeaderStyled role="banner">
       <Container>

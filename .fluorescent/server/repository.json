@@ -143,6 +143,12 @@
       "label": "lesson",
       "progress": "created",
       "id": "node-1577453837904"
+    },
+    {
+      "type": "organism",
+      "label": "lesson-letters",
+      "progress": "created",
+      "id": "node-1577722527855"
     }
   ],
   "tree": [

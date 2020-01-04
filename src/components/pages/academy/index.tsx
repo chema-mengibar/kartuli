@@ -1,7 +1,8 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, Fragment} from 'react'
+
+import {blocksLessons, LessonProps} from '../../../helpers/lessons'
 
 import RegionsWrapper from '../../organisms/regions-wrapper'
-import MockData from "../../molecules/lesson-card/lesson-card.mocks";
 import LessonCard from '../../molecules/lesson-card';
 
 import {
@@ -15,42 +16,57 @@ import {
 
 export interface AcademyProps {
   id?: string;
+  location?: any;
 }
 
 
 const Academy = (props:AcademyProps): ReactElement => {
+
   return (
-    <RegionsWrapper>
+    <RegionsWrapper router={props.location}>>
       <AcademyStyled>
-
-      <Title>Hello!</Title>
-      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc quam.</Description>
-      
-      <BlockTitle>BASICS</BlockTitle>
-      <CardsContainer>
-        <LessonCard {...MockData.default} to={{pathname:'lesson/66', state:{lessonId:54}}}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-      </CardsContainer>
-      
-      <BlockTitle>LEVEL 1</BlockTitle>
-      <CardsContainer>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-      </CardsContainer>
-      
-      <BlockTitle>CATEGORIES</BlockTitle>
-      <CardsContainer>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-        <LessonCard {...MockData.default}></LessonCard>
-      </CardsContainer>
-
+        <Title>Hello!</Title>
+        <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc quam.</Description>
+        {
+          blocksLessons && blocksLessons.map( (block:any, idxB: number) =>{
+            return (
+              <Fragment key={'block_' + idxB }>
+                <BlockTitle>{block.label}</BlockTitle>
+                <CardsContainer>
+                  {
+                    block && block.lessons.map( (lessonProps:LessonProps, idxL:number) => {
+                      return (
+                        <LessonCard 
+                          key={'lesson_' + idxB + '_' + idxL } 
+                          {...lessonProps} 
+                          to={{pathname:'lesson/'+ lessonProps.id}}
+                        />
+                      )
+                    })
+                  }
+                </CardsContainer>
+              </Fragment>
+            )
+          })
+        }
       </AcademyStyled>
     </RegionsWrapper>
   )
  };
 
 export default Academy
+
+/*
+
+<LessonCard 
+  {...MockData.default} 
+  to={{
+    pathname:'lesson/66', 
+    state:{
+      type:'lesson', 
+      lessonId:54
+    }
+  }} 
+/>
+
+*/

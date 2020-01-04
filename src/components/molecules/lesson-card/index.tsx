@@ -11,7 +11,6 @@ import {
   Progress
 } from "./lesson-card.styles";
 
-
 export interface LessonCardProps {
   id?: string;
   image:string;

@@ -1,7 +1,5 @@
 import React from 'react'
 
-console.log('Init AppContext')
-
 const AppContext = React.createContext()
 
 let initialState = {

@@ -12,11 +12,14 @@ import {
 
 export interface RegionsWrapperProps {
   children?: React.ReactNode;
+  router: object;
 }
 
 const RegionsWrapper = ({
-  children
+  children,
+  router
 }:RegionsWrapperProps): ReactElement => {
+
   return (
     <RegionsWrapperStyled>
       <RegionHeader />

@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route path="/menu" component={Menu} />
         <Route path="/academy" component={Academy} />
-        <Route path="/lesson/:lessonId" component={Lesson} />
+        <Route path="/lesson/:lessonId/:exerciseId?" component={Lesson} />
         <Route path="/" component={Intro} />
       </Switch>
     </Router>

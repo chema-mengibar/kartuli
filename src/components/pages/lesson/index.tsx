@@ -1,5 +1,6 @@
 import React, {ReactElement} from 'react'
 
+import {lessonsCatalog} from '../../../helpers/lessons/catalog'
 import RegionsWrapper from '../../organisms/regions-wrapper'
 
 import {
@@ -16,13 +17,16 @@ export interface LessonProps {
 
 const Lesson = (props:LessonProps): ReactElement => {
 
-  console.log( 'PROPS', props.location.state.lessonId )
-  console.log( 'PROPS', props.match.params.lessonId )
+  // console.log( 'PROPS', props.location )
+  const lessonId = props.match.params.lessonId
+  const exerciseId = props.match.params.exerciseId
 
+  const LessonComponent = lessonsCatalog[lessonId].component
+  
   return (
-    <RegionsWrapper>
+    <RegionsWrapper router={ {location: props.location, params: props.match.params} }>
       <LessonStyled>
-        Lesson
+        <LessonComponent params={{lessonId: lessonId, exerciseId:exerciseId }}/>
       </LessonStyled>
     </RegionsWrapper>
   )
