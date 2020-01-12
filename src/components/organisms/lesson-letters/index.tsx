@@ -1,7 +1,10 @@
 import React, {ReactElement} from 'react'
 import { Link } from 'react-router-dom';
 
+import { geoAbc, GeoLetterNames } from '../../../helpers/georgian/alphabet'
 import Caligraph from '../../molecules/caligraph';
+
+import {TExercise, exercises, letterExplanation } from './partial'
 
 import {
    LessonLettersStyled,
@@ -18,47 +21,60 @@ export interface LessonLettersProps {
   };
 }
 
-const exercises = [
-  {
-    id:'a'
-  }
-]
-
 const LessonLetters = ({
   id,
   params
 }:LessonLettersProps): ReactElement => {
 
-  console.log('params', params)
   return (
     <LessonLettersStyled>
       <Title>Lesson Letters!</Title> 
       <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc quam.</Description>
+      
       {!params.exerciseId && 
         <ul>
-          <li>
-            <Link id={`exercise-1`} to={{pathname:`/lesson/${params.lessonId}/1`}}>a</Link>    
-          </li>
+          {
+            exercises && exercises.map( ( execise: TExercise )=> (
+              <li key={`li-exercise-${execise.geoLetterName}`}>
+                <Link 
+                  id={`exercise-${execise.geoLetterName}`} 
+                  to={{pathname:`/lesson/${params.lessonId}/${execise.geoLetterName}`}}
+                >
+                  {execise.geoLetterName} {execise.geoLetter}
+                </Link>
+              </li>
+            ))
+          }
         </ul>
       }
+
       {
         params.exerciseId && 
         <div>
-          <Link id={`exercise-1`} to={{pathname:`/lesson/${params.lessonId}`}}>Back to lesson Index</Link> 
+          <Link id={`exercises-index`} to={{pathname:`/lesson/${params.lessonId}`}}>Back to lesson Index</Link> 
           <br />
           <br />
           <div>
-            <Caligraph letter={'oni'} />
+            <Caligraph letter={params.exerciseId as GeoLetterNames} />
           </div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc quam, ornare et pretium in, vestibulum vel elit. Duis fermentum nulla ut pretium 
           </div>
-          <div>o</div>
           <div>
-          ოთახი
+            {
+              geoAbc[params.exerciseId as GeoLetterNames] && 
+              geoAbc[params.exerciseId as GeoLetterNames].letter
+            }
+          </div>
+          <div>
+            {
+              letterExplanation[params.exerciseId as GeoLetterNames] && 
+              letterExplanation[params.exerciseId as GeoLetterNames].word
+            }
           </div>
         </div>
       }
+
     </LessonLettersStyled>
   )
  };

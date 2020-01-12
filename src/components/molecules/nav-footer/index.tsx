@@ -1,4 +1,6 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, useContext, useState, useLayoutEffect} from 'react'
+
+import {getNavContext} from '../../../helpers/contexts/Nav.context'
 
 import ButtonBox, {ButtonBoxProps} from '../../atoms/button-box'
 import { IconGoto } from "../../atoms/icon/icon-goto";
@@ -33,22 +35,36 @@ const NavFooter = ({
 
 const iconColor = theme.colors.text._
 
+  const { navState, navDispatch } = useContext( getNavContext() )
+
+  const [left] = useState( navState.left );
+  const [center] = useState( navState.center );
+  const [right] = useState( navState.right );
+
+  const [visibles, setVisibles ] = useState( [left.visible, center.visible, right.visible] );
+
+  useLayoutEffect(() => {
+    setVisibles( [left.visible, center.visible, right.visible] )
+  }, [navState]);
+
+  // navDispatch({ type: "rename", payload: 'Name?'})
+
   return (
     <NavFooterStyled id="nav-footer" role="navigation">
       <ContainerStyled>
         {
-          items && items.map( item =>{
-            return (
+          items && items.map( (item, idx ) =>{
+            return visibles[idx] ? (
               <ButtonBox 
                 key={`button-nav_${item.id}`}
                 id={item.id} 
                 label={item.label}
-                onClick={item.onClick}
+                onClick={ ()=> {item.onClick; right.onClick()}}
               > 
                 {item.icon === 'icon-next' && <IconNext color={iconColor} /> } 
                 {item.icon === 'icon-previous' && <IconPrevious color={iconColor} /> } 
                 {item.icon === 'icon-goto' && <IconGoto color={iconColor} /> } 
-              </ButtonBox>)
+              </ButtonBox>): ''
           })
         }
       </ContainerStyled>

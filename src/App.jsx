@@ -7,6 +7,8 @@ import {
 
 import { hot } from 'react-hot-loader';
 
+import { NavContextProvider } from './helpers/contexts/Nav.context'
+
 import Intro from './components/pages/intro'
 import Menu from './components/pages/menu'
 import Academy from './components/pages/academy'
@@ -14,14 +16,16 @@ import Lesson from './components/pages/lesson'
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/menu" component={Menu} />
-        <Route path="/academy" component={Academy} />
-        <Route path="/lesson/:lessonId/:exerciseId?" component={Lesson} />
-        <Route path="/" component={Intro} />
-      </Switch>
-    </Router>
+    <NavContextProvider>
+      <Router>
+        <Switch>
+          <Route path="/menu" component={Menu} />
+          <Route path="/academy" component={Academy} />
+          <Route path="/lesson/:lessonId/:exerciseId?" component={Lesson} />
+          <Route path="/" component={Intro} />
+        </Switch>
+      </Router>
+    </NavContextProvider>
   );
 }
 

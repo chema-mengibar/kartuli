@@ -8,13 +8,12 @@ import { CaligraphProps } from ".";
 export const CaligraphStyled = styled.div`
   position:relative;
   width:360px;
-  height:auto;
+  height:100px;
 `;
 
 export const Canvas = styled.div`
   position:absolute;
   width: 100%;
-
 `;
 
 export const Bar = styled.div`

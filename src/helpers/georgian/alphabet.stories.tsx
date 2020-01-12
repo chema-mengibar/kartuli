@@ -27,9 +27,13 @@ storiesOf('Helper | Georgian', module).add(
   (): ReactElement => 
   <>
     <Letter>
-      <Char> { geoAbc.zeni.letter } </Char>
-      <div> <i>Letter:</i>  { geoAbc.zeni.lat } </div>
-      <div> <i>Pronunciation:</i> { geoAbc.zeni.pron } </div>
+      Letter
     </Letter>
   </>  
 );
+
+/* 
+  <Char> { geoAbc.zeni.letter } </Char>
+  <div> <i>Letter:</i>  { geoAbc.zeni.lat } </div>
+  <div> <i>Pronunciation:</i> { geoAbc.zeni.pron } </div> 
+*/
