@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { storiesOf } from "@storybook/react";
 
-import NavFooter from ".";
+import NavFooter from "./nav-footer";
 import MockData from "./nav-footer.mocks";
 
 storiesOf('molecules/NavFooter', module).add(

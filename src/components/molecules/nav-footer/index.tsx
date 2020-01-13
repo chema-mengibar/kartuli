@@ -2,16 +2,8 @@ import React, {ReactElement, useContext, useState, useLayoutEffect} from 'react'
 
 import {getNavContext} from '../../../helpers/contexts/Nav.context'
 
-import ButtonBox, {ButtonBoxProps} from '../../atoms/button-box'
-import { IconGoto } from "../../atoms/icon/icon-goto";
-import { IconNext } from "../../atoms/icon/icon-next";
-import { IconPrevious } from "../../atoms/icon/icon-previous";
-import { theme } from '../../../styles/theme.styles'
-
-import {
-   NavFooterStyled,
-   ContainerStyled
-} from "./nav-footer.styles";
+import { ButtonBoxProps } from '../../atoms/button-box';
+import NavFooter from './nav-footer';
 
 
 const IconsLib= {
@@ -24,52 +16,53 @@ type IconsStore = (typeof IconsLib)[keyof typeof IconsLib]
 
 type ButtonBoxWithIconT = ButtonBoxProps & {icon: IconsStore}
 
-export type NavFooterT = {
-  items: ButtonBoxWithIconT[]
-}
+
+const items =[
+  { 
+    id:'nav-footer-left',
+    label:'Back',
+    disabled: false,
+    icon: 'icon-previous',
+    onClick: ()=>{ console.log('goto to previous')},
+  },
+  { 
+    id:'nav-footer-center',
+    label:'Academy',
+    disabled: false,
+    icon: 'icon-goto',
+    onClick: ()=>{ console.log('goto to somewhere')},
+  },
+  { 
+    id:'nav-footer-right',
+    label:'Next',
+    disabled: false,
+    icon: 'icon-next',
+    onClick: ()=>{ console.log('goto to next')},
+  },
+] as ButtonBoxWithIconT[]
 
 
-const NavFooter = ({
-  items=[]
-}:NavFooterT): ReactElement => {
+const NavFooterContainer = (): ReactElement => {
 
-const iconColor = theme.colors.text._
+  const { navState } = useContext( getNavContext() )
 
-  const { navState, navDispatch } = useContext( getNavContext() )
-
-  const [left] = useState( navState.left );
-  const [center] = useState( navState.center );
-  const [right] = useState( navState.right );
-
-  const [visibles, setVisibles ] = useState( [left.visible, center.visible, right.visible] );
+  const [visibles, setVisibles ] = useState( [navState.left.visible, navState.center.visible, navState.right.visible] );
 
   useLayoutEffect(() => {
-    setVisibles( [left.visible, center.visible, right.visible] )
+    setVisibles( [navState.left.visible, navState.center.visible, navState.right.visible] )
+    items[0].onClick = navState.left.onClick 
+    items[1].onClick = navState.center.onClick 
+    items[2].onClick = navState.right.onClick 
   }, [navState]);
 
-  // navDispatch({ type: "rename", payload: 'Name?'})
+
+  const filteredItems = items.filter( (item: ButtonBoxWithIconT, idx: number): ButtonBoxWithIconT[] =>{
+    return visibles[idx]
+  })
 
   return (
-    <NavFooterStyled id="nav-footer" role="navigation">
-      <ContainerStyled>
-        {
-          items && items.map( (item, idx ) =>{
-            return visibles[idx] ? (
-              <ButtonBox 
-                key={`button-nav_${item.id}`}
-                id={item.id} 
-                label={item.label}
-                onClick={ ()=> {item.onClick; right.onClick()}}
-              > 
-                {item.icon === 'icon-next' && <IconNext color={iconColor} /> } 
-                {item.icon === 'icon-previous' && <IconPrevious color={iconColor} /> } 
-                {item.icon === 'icon-goto' && <IconGoto color={iconColor} /> } 
-              </ButtonBox>): ''
-          })
-        }
-      </ContainerStyled>
-    </NavFooterStyled>
+    <NavFooter items={filteredItems}></NavFooter>
   )
  };
 
-export default NavFooter
+export default NavFooterContainer

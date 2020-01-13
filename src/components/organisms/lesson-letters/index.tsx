@@ -1,6 +1,8 @@
-import React, {ReactElement} from 'react'
-import { Link } from 'react-router-dom';
+import React, {ReactElement, useContext, useLayoutEffect} from 'react'
+import { Link, useHistory  } from 'react-router-dom';
 
+
+import {getNavContext} from '../../../helpers/contexts/Nav.context'
 import { geoAbc, GeoLetterNames } from '../../../helpers/georgian/alphabet'
 import Caligraph from '../../molecules/caligraph';
 
@@ -26,6 +28,37 @@ const LessonLetters = ({
   params
 }:LessonLettersProps): ReactElement => {
 
+  const { navState, navDispatch } = useContext( getNavContext() )
+  let history = useHistory();
+
+  useLayoutEffect(() => {
+    if( params.exerciseId  ){
+      navDispatch({ type: "show", payload: [true, false, true]})
+      navDispatch({ 
+        type: "setItemClick", 
+        payload: {
+          item:'left', 
+          fct:()=>{
+            console.log('left new')
+            history.push(`/lesson/${params.lessonId}/`);
+          }
+        }
+      })
+    }else{
+      navDispatch({ type: "show", payload: [false, true, false]})
+      navDispatch({ 
+        type: "setItemClick", 
+        payload: {
+          item:'center', 
+          fct:()=>{
+            console.log('center new')
+            history.push(`/academy`);
+          }
+        }
+      })
+    }
+  }, [params.exerciseId]);
+  
   return (
     <LessonLettersStyled>
       <Title>Lesson Letters!</Title> 

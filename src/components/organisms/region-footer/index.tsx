@@ -1,8 +1,7 @@
 import React, {ReactElement} from 'react'
 
 import {Container} from '../../../styles/layout.styles'
-import NavFooter from '../../molecules/nav-footer'
-import MockData from '../../molecules/nav-footer/nav-footer.mocks';
+import NavFooterContainer from '../../molecules/nav-footer'
 
 import {
  	RegionFooterStyled,
@@ -16,12 +15,10 @@ export interface RegionFooterProps {
 
 const RegionFooter = (props:RegionFooterProps): ReactElement => {
 
-  const mockItems = MockData.default.items
-
   return (
     <RegionFooterStyled role="navigation">
       <Container>
-        <NavFooter items={mockItems}/>
+        <NavFooterContainer />
       </Container>
     </RegionFooterStyled>
   )
