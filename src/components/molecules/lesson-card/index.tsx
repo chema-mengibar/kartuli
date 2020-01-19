@@ -31,6 +31,8 @@ const LessonCard = ({
   totalLessons,
   to
 }:LessonCardProps): ReactElement => {
+  
+  console.log('LinkStyled', LinkStyled )
   return (
     <LinkStyled 
       id={id && `lesson-card${id}`}

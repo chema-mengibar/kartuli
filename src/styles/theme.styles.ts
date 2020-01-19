@@ -12,17 +12,20 @@ export const theme = {
     },
     accent:{
       default:{
-        d2:'#5180C9',
-        d1:'#759FE1',
-        _:'#9EBEF1',
-        l1:'#CCDEFB',
-        l2:'#E0EAFA'
+        d2:'#D54B6C',
+        d1:'#DB4E6F',
+        _:'#FF567A',
+        l1:'#FF6B8A',
+        l2:'#FF7E9A'
       },
     },
     extra:{
       success:{
         _:'#64DC70',
       },
+    },
+    neutral:{
+      _:'#FDFCFC',
     }
   }
 }

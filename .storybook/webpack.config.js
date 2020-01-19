@@ -6,6 +6,10 @@ module.exports = ({ config }) => {
       loader: 'ts-loader',
     },
   );
+  config.resolve.alias = {
+    'react-router-dom': path.resolve(__dirname, 'src/utilities/react-router-dom'),
+  }
+
   config.resolve.extensions.push(".ts", ".tsx");
   return config;
 };
