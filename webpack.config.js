@@ -1,84 +1,68 @@
 const path = require('path');
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-var HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin')
+const webpack = require('webpack');
 require('dotenv').config();
 
-module.exports = function( env, argv) {
+module.exports = function (env, argv) {
 
-  // const isEnvDevelopment = env === 'development';
-  // const isEnvProduction = env === 'production';
+  const nodeEnv = process.env.NODE_ENV
+  const domain = process.env.DOMAIN
+  const subDirName = process.env.SUB_DIR
 
-  const isDevelopment = argv.mode === 'development';
+  const isDevelopment = nodeEnv === 'development';
+  const localHost = 'http://localhost:3000'
 
-  const replaceEnv = {
-    domain: !isDevelopment ? process.env.DOMAIN : '',
+  let render = {
+    domain: isDevelopment ? localHost : `${domain}/${subDirName}`,
+    subDir: isDevelopment ? '' : `/${subDirName}`, 
   }
 
-  const netIp = '192.168.178.22'
-
   return {
-    mode: argv.mode,
-    devtool: ( isDevelopment
-        ? '#eval-source-map' 
-        : 'source-map'),
-    entry: path.resolve(__dirname, 'src/index.jsx'),
+    mode: nodeEnv,
+    entry: [
+      'webpack/hot/dev-server',
+      'webpack-hot-middleware/client',
+      path.resolve(__dirname, 'src/index.jsx')
+    ],
     output: {
       path: path.resolve(__dirname, 'public'),
       publicPath: "/",
       filename: 'app.js'
     },
     resolve: {
-      extensions: [".tsx", ".ts",".jsx",".js"], 
-      // alias: {
-      //   'react-dom': '@hot-loader/react-dom'
-      // }
+      extensions: [".tsx", ".ts", ".jsx", ".js"],
     },
     module: {
       rules: [
-        { 
+        {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'] 
-          // use: ['react-hot-loader/webpack', 'babel-loader'] 
+          use: ['babel-loader']
         },
         {
           test: /\.ts$|\.tsx$/,
           loader: 'ts-loader',
-        },
+        }
       ]
     },
-    devServer: {
-      contentBase: "./public",
-      index: 'index.html',
-      hot: true,
-      quiet: true,
-      historyApiFallback: true,
-      host: netIp,
-      port: 3000,
-      // allowedHosts: ['localhost', '192.168.178.22', '0.0.0.0'],
-      // publicPath: '/dist',
-      // open: true,
-    },
     plugins: [
+      new webpack.DefinePlugin({
+        ___SUBDIR___: JSON.stringify(render.subDir)
+      }),
+      true ? new webpack.HotModuleReplacementPlugin() : false,
       new HtmlWebpackPlugin(
-        Object.assign(
-          {},
-          {
-            template: path.resolve( __dirname, 'src/index.html' ),
-            filename: 'index.html',
-            inject: false 
-          },
-          isDevelopment ?
-          { }
-          : undefined
-        )
-      ),
-      new HtmlReplaceWebpackPlugin([
         {
-          pattern: '___DOMAIN___',
-          replacement: replaceEnv.domain
-        },
-      ])
-    ]
+          template: "./src/index.html",
+          filename: "./index.html",
+          inject: false,
+        }),
+        new HtmlReplaceWebpackPlugin([
+          {
+            pattern: '___DOMAIN___',
+            replacement: render.domain
+          }
+        ])
+    ].filter(Boolean)
   }
 };

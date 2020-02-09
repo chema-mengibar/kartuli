@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { storiesOf } from "@storybook/react";
 
-import Intro from ".";
+import Intro from "./";
 import MockData from "./intro.mocks";
 
 storiesOf('pages/Intro', module).add(

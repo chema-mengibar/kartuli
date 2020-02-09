@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  
 } from "react-router-dom";
 
 import { hot } from 'react-hot-loader';
@@ -14,10 +15,12 @@ import Menu from './components/pages/menu'
 import Academy from './components/pages/academy'
 import Lesson from './components/pages/lesson'
 
+const SUBDIR =___SUBDIR___; // replace not work
+
 function App() {
   return (
     <NavContextProvider>
-      <Router>
+      <Router basename={`${SUBDIR}`} >
         <Switch>
           <Route path="/menu" component={Menu} />
           <Route path="/academy" component={Academy} />

@@ -3,6 +3,9 @@ import styled, { css } from "styled-components";
 import { CharSizes } from ".";
 
 export const GeoCharStyled = styled.div<{size: CharSizes}>`
+
+  font-family: GeoFont;
+
   ${({size}) => {
     if( size ===  CharSizes.small ){
       return css` font-size: 12px;`
