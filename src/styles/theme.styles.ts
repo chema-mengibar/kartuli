@@ -12,6 +12,7 @@ export const theme = {
     },
     accent:{
       default:{
+        d3:'#860321',
         d2:'#D54B6C',
         d1:'#DB4E6F',
         _:'#FF567A',

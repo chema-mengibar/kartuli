@@ -1,0 +1,41 @@
+   // {
+        //   test: /\.(woff|woff2|eot|ttf|otf)$/,
+        //   use: {
+        //     loader: 'file-loader',
+        //     options: {
+        //       name: '[path][name].[ext]', // Name of bundled asset
+        //       outputPath: '/', // Output location for assets. Final: `app/assets/webpack/webpack-assets/`
+        //       publicPath: '/assets/' // Endpoint asset can be found at on Rails server
+        //     }
+        //   }
+        // },
+
+
+          // use: ['react-hot-loader/webpack', 'babel-loader'] 
+
+
+            resolve: {
+      extensions: [".tsx", ".ts",".jsx",".js"], 
+      // alias: {
+      //   'assets': path.resolve('./dist/assets')
+      // }
+    },
+
+
+        devServer: {
+      contentBase: "public",
+      index: 'index.html',
+      hot: true,
+      quiet: true,
+      historyApiFallback: true,
+      host: netIp,
+      port: 3000,
+      // allowedHosts: ['localhost', '192.168.178.22', '0.0.0.0'],
+      publicPath: '/dist',
+      // open: true
+    
+    },
+
+
+      // const isEnvDevelopment = env === 'development';
+  // const isEnvProduction = env === 'production';

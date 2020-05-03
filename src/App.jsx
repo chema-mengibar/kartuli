@@ -14,8 +14,9 @@ import Intro from './components/pages/intro'
 import Menu from './components/pages/menu'
 import Academy from './components/pages/academy'
 import Lesson from './components/pages/lesson'
+import Trainer from './components/pages/trainer'
 
-const SUBDIR =___SUBDIR___; // replace not work
+const SUBDIR =___SUBDIR___;
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/menu" component={Menu} />
           <Route path="/academy" component={Academy} />
           <Route path="/lesson/:lessonId/:exerciseId?" component={Lesson} />
+          <Route path="/trainer/:lessonId" component={Trainer} />
           <Route path="/" component={Intro} />
         </Switch>
       </Router>

@@ -1,5 +1,7 @@
 import { css } from "styled-components";
 
+import {device} from '../helpers/media';
+
 const small = css`
   font-size: 12px;
   line-height: 16px;
@@ -97,5 +99,17 @@ export const text = {
   `,
   'dialogPron':css`
     ${medium}
+  `,  
+
+  'regionMainTitle':css`
+    font-size: 26px;
+  `,  
+
+  'menuItemBig':css`
+    font-size: 26px;
+
+    ${device.tablet(css`
+      font-size: 20px;
+    `)}
   `,  
 }

@@ -50,8 +50,11 @@ const NavFooterContainer = (): ReactElement => {
 
   useLayoutEffect(() => {
     setVisibles( [navState.left.visible, navState.center.visible, navState.right.visible] )
+    items[0].label = navState.left.label 
     items[0].onClick = navState.left.onClick 
+    items[1].label = navState.center.label 
     items[1].onClick = navState.center.onClick 
+    items[2].label = navState.right.label 
     items[2].onClick = navState.right.onClick 
   }, [navState]);
 

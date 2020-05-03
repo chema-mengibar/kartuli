@@ -1,7 +1,6 @@
 import React, {ReactElement, useContext, useLayoutEffect} from 'react'
 import { Link, useHistory  } from 'react-router-dom';
 
-
 import {getNavContext} from '../../../helpers/contexts/Nav.context'
 import { geoAbc, GeoLetterNames } from '../../../helpers/georgian/alphabet'
 import Caligraph from '../../molecules/caligraph';
@@ -31,27 +30,64 @@ const LessonLetters = ({
   const { navState, navDispatch } = useContext( getNavContext() )
   let history = useHistory();
 
+  let exercise : TExercise | null = null
+
   useLayoutEffect(() => {
     if( params.exerciseId  ){
-      navDispatch({ type: "show", payload: [true, false, true]})
+
+      exercise = exercises.find( exeItem =>{
+        return exeItem.id == params.exerciseId
+      } )
+
+      navDispatch({ type: "show", payload: [true, true, true]})
       navDispatch({ 
         type: "setItemClick", 
         payload: {
           item:'left', 
           fct:()=>{
             console.log('left new')
+            let prevIndex = exercise.index - 1
+            if( prevIndex < 0 ){
+              prevIndex = exercises.length - 1
+            }
+            const prevLetter = exercises[prevIndex]
+            history.push(`/lesson/letters/${prevLetter.id}/`);
+          }
+        }
+      })
+      navDispatch({ 
+        type: "setItemClick", 
+        payload: {
+          item:'center', 
+          label: 'Lesson index',
+          fct:()=>{
             history.push(`/lesson/${params.lessonId}/`);
           }
         }
       })
+      navDispatch({ 
+        type: "setItemClick", 
+        payload: {
+          item:'right', 
+          fct:()=>{
+            let nextIndex = exercise.index + 1
+            if( nextIndex >= exercises.length ){
+              nextIndex = 0
+            }
+            const nextLetter = exercises[nextIndex]
+            history.push(`/lesson/letters/${nextLetter.id}/`);
+          }
+        }
+      })
+    
     }else{
       navDispatch({ type: "show", payload: [false, true, false]})
       navDispatch({ 
         type: "setItemClick", 
         payload: {
           item:'center', 
+          label:'Academy', 
           fct:()=>{
-            console.log('center new')
             history.push(`/academy`);
           }
         }

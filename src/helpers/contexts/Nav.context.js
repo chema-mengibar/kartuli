@@ -6,21 +6,21 @@ let initialState = {
   left:{
     disabled:false,
     visible:false,
-    label:'',
+    label:'Previous',
     icon:'icon-previous',
     onClick: ()=>{}
   },
   center:{
     disabled:false,
     visible:false,
-    label:'',
+    label:'Index',
     icon:'icon-goto',
     onClick: ()=>{}
   },
   right:{
     disabled:false,
     visible:false,
-    label:'',
+    label:'Next',
     icon:'icon-next',
     onClick: ()=>{}
   },
@@ -40,7 +40,14 @@ let reducer = (state, action) => {
       state.right.visible =  action.payload[2]
       return {...state}
     case "setItemClick":
-      return { ...state, [action.payload.item]:{ ...state[action.payload.item], onClick: action.payload.fct} }
+      return { 
+        ...state,
+        [action.payload.item]:{ 
+          ...state[action.payload.item],
+           onClick: action.payload.fct,
+           label:( action.payload.label) ? action.payload.label : state[action.payload.item].label
+        }
+     }
   }
 };
 

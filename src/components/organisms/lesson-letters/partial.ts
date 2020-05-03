@@ -2,6 +2,7 @@ import { geoAbc, GeoLetterNames } from '../../../helpers/georgian/alphabet'
 
 export interface TExercise {
   id: string
+  index: number
   geoLetterName: GeoLetterNames
   geoLetter: string
   geoLat: string
@@ -118,19 +119,13 @@ export const letterExplanation = {
   },
 } as TletterExplanation
 
-export const exercises = Object.entries(geoAbc).map(( letterEntry )=>{
+export const exercises = Object.entries(geoAbc).map(( letterEntry, index )=>{
   return  {
     id: letterEntry[0],
+    index: index,
     geoLetterName: letterEntry[0],
     geoLetter: letterEntry[1].letter,
     geoLat: letterEntry[1].lat,
     geoPron: letterEntry[1].pron,
   }
 }) as TExercise[]
-
-
-// interface Dictionary {
-//   [key: string]: any;
-// }
-
-// export const geoAbcDict = geoAbc as Dictionary;

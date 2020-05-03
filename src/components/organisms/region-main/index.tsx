@@ -16,7 +16,7 @@ const RegionMain = ({
   children
 }:RegionMainProps): ReactElement => {
   return (
-    <RegionMainStyled role="main" withMargins={spaced}>
+    <RegionMainStyled  role="main" withMargins={spaced}>
       <Container>
         {children}
       </Container>

@@ -2,6 +2,9 @@ import React, {ReactElement, useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom';
 
 import RegionMain from '../../organisms/region-main'
+import Logo  from '../../atoms/logo'
+import Spinner  from '../../atoms/spinner'
+import { LogoSizes } from '../../atoms/logo/logo.types'
 
 import {
  	IntroStyled,
@@ -17,14 +20,15 @@ const Intro = (): ReactElement => {
   }, [])
 
   return (
-    <RegionMain>
+     
       <IntroStyled>
-        Intro
+        <Logo size={LogoSizes.big} negative/>
+        <Spinner />
         {
           loaded && <Redirect to="/menu" />
         }
       </IntroStyled>
-    </RegionMain>
+
   )
  };
 

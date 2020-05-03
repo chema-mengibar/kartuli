@@ -50,7 +50,7 @@ module.exports = function (env, argv) {
       new webpack.DefinePlugin({
         ___SUBDIR___: JSON.stringify(render.subDir)
       }),
-      true ? new webpack.HotModuleReplacementPlugin() : false,
+      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(
         {
           template: "./src/index.html",
@@ -63,6 +63,8 @@ module.exports = function (env, argv) {
             replacement: render.domain
           }
         ])
-    ].filter(Boolean)
+    ]
   }
 };
+
+// .filter(Boolean)

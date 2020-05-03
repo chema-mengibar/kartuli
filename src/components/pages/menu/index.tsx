@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import RegionMain from '../../organisms/region-main'
 
 import {
- 	MenuStyled,
+  TitleSt,
+  MenuItemSt,
+  ImageWrapper,
 } from "./menu.styles";
 
 
@@ -14,10 +16,19 @@ export interface MenuProps {
 
 const Menu = (props:MenuProps): ReactElement => {
   return (
-    <RegionMain>
-      <MenuStyled>
-        <Link to={'academy'}>Academy</Link>
-      </MenuStyled>
+    <RegionMain spaced>
+    
+      <TitleSt>Menu</TitleSt>
+
+      <Link to={'academy'}>
+        <MenuItemSt>Academy
+        <ImageWrapper>
+          <img src="./images/pexels-photo-256468.jpg" />
+          {/* <img src="../../../../static/images/pexels-photo-256468.jpg" /> */}
+        </ImageWrapper>
+        </MenuItemSt>
+      </Link>
+     
     </RegionMain>
   )
  };

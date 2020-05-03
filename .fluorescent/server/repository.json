@@ -123,7 +123,7 @@
     {
       "type": "page",
       "label": "intro",
-      "progress": "created",
+      "progress": "imports-error",
       "id": "node-1575821756014"
     },
     {
@@ -141,7 +141,7 @@
     {
       "type": "page",
       "label": "lesson",
-      "progress": "created",
+      "progress": "imports-error",
       "id": "node-1577453837904"
     },
     {
@@ -149,6 +149,30 @@
       "label": "lesson-letters",
       "progress": "created",
       "id": "node-1577722527855"
+    },
+    {
+      "type": "organism",
+      "label": "exam-letters",
+      "progress": "created",
+      "id": "node-1581275725173"
+    },
+    {
+      "type": "page",
+      "label": "trainer",
+      "progress": "created",
+      "id": "node-1587926282393"
+    },
+    {
+      "type": "atom",
+      "label": "logo",
+      "progress": "created",
+      "id": "node-1588505237419"
+    },
+    {
+      "type": "atom",
+      "label": "spinner",
+      "progress": "created",
+      "id": "node-1588511763281"
     }
   ],
   "tree": [
@@ -207,6 +231,19 @@
       "id": "node-1575820948392",
       "children": [
         "node-1575108706769"
+      ]
+    },
+    {
+      "id": "node-1577453837904",
+      "children": [
+        "node-1577722527855"
+      ]
+    },
+    {
+      "id": "node-1575821756014",
+      "children": [
+        "node-1588505237419",
+        "node-1588511763281"
       ]
     }
   ]

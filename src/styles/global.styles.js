@@ -18,4 +18,9 @@ export const GlobalStyles = createGlobalStyle`
     min-height:100%;
     height: 100%;
   }
+
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+  }
+
 `
