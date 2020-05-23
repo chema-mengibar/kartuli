@@ -18,7 +18,8 @@ export interface LessonCardProps {
   description: string;
   currentLessons: number;
   totalLessons: number;
-  to?: object | string
+  to?: object | string;
+  color: string;
 }
 
 
@@ -27,12 +28,12 @@ const LessonCard = ({
   image,
   title,
   description,
+  color='sky',
   currentLessons,
   totalLessons,
   to
 }:LessonCardProps): ReactElement => {
   
-  console.log('LinkStyled', LinkStyled )
   return (
     <LinkStyled 
       id={id && `lesson-card${id}`}
@@ -51,3 +52,20 @@ const LessonCard = ({
  };
 
 export default LessonCard
+
+
+
+/*
+
+<LessonCard 
+  {...MockData.default} 
+  to={{
+    pathname:'lesson/66', 
+    state:{
+      type:'lesson', 
+      lessonId:54
+    }
+  }} 
+/>
+
+*/

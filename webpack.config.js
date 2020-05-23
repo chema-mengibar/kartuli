@@ -21,8 +21,8 @@ module.exports = function (env, argv) {
   return {
     mode: nodeEnv,
     entry: [
-      'webpack/hot/dev-server',
-      'webpack-hot-middleware/client',
+      // 'webpack/hot/dev-server',
+      // 'webpack-hot-middleware/client', // ?path=http://localhost:3000/__webpack_hmr
       path.resolve(__dirname, 'src/index.jsx')
     ],
     output: {
@@ -50,7 +50,7 @@ module.exports = function (env, argv) {
       new webpack.DefinePlugin({
         ___SUBDIR___: JSON.stringify(render.subDir)
       }),
-      new webpack.HotModuleReplacementPlugin(),
+      // new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(
         {
           template: "./src/index.html",

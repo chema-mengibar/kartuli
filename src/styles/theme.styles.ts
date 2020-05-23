@@ -17,8 +17,26 @@ export const theme = {
         d1:'#DB4E6F',
         _:'#FF567A',
         l1:'#FF6B8A',
-        l2:'#FF7E9A'
+        l2:'#FF7E9A',
       },
+      sky:{
+        d:'#7A40B5',
+        _:'#964FDD',
+        l:'#C095EB',
+      },
+      kiwi:{
+        d:'#94BF41',
+        _:'#ADDD4F',
+        l:'#CEEB95',
+      },
+      lila:{
+        d:'#7A40B5',
+        _:'#964FDD',
+        l:'#C095EB',
+      },
+      carmin:{
+        _:'#E90263',
+      }
     },
     extra:{
       success:{
@@ -28,5 +46,7 @@ export const theme = {
     neutral:{
       _:'#FDFCFC',
     }
+
+
   }
 }

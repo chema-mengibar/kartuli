@@ -1,7 +1,7 @@
 import React, {ReactElement} from 'react'
 
 import {Container} from '../../../styles/layout.styles'
-import NavFooterContainer from '../../molecules/nav-footer'
+import NavFooter from '../../molecules/nav-footer'
 
 import {
  	RegionFooterStyled,
@@ -18,7 +18,7 @@ const RegionFooter = (props:RegionFooterProps): ReactElement => {
   return (
     <RegionFooterStyled role="navigation">
       <Container>
-        <NavFooterContainer />
+        <NavFooter />
       </Container>
     </RegionFooterStyled>
   )

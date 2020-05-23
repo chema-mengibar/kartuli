@@ -24,9 +24,7 @@ const Intro = (): ReactElement => {
       <IntroStyled>
         <Logo size={LogoSizes.big} negative/>
         <Spinner />
-        {
-          loaded && <Redirect to="/menu" />
-        }
+        { loaded && <Redirect to="/academy" />  }
       </IntroStyled>
 
   )

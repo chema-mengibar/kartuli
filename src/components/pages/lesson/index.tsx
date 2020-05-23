@@ -18,6 +18,7 @@ export interface LessonProps {
 const Lesson = (props:LessonProps): ReactElement => {
 
   // console.log( 'PROPS', props.location )
+  
   const lessonId = props.match.params.lessonId
   const exerciseId = props.match.params.exerciseId
 

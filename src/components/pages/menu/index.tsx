@@ -2,12 +2,15 @@ import React, {ReactElement} from 'react'
 import { Link } from 'react-router-dom';
 
 import RegionMain from '../../organisms/region-main'
+import Logo from '../../atoms/logo'
+import { LogoSizes } from '../../atoms/logo/logo.types';
 
 import {
   TitleSt,
   MenuItemSt,
-  ImageWrapper,
+  LinksWrapper,
 } from "./menu.styles";
+
 
 
 export interface MenuProps {
@@ -17,18 +20,17 @@ export interface MenuProps {
 const Menu = (props:MenuProps): ReactElement => {
   return (
     <RegionMain spaced>
-    
+      <Logo size={LogoSizes.small}/>
       <TitleSt>Menu</TitleSt>
-
-      <Link to={'academy'}>
-        <MenuItemSt>Academy
-        <ImageWrapper>
-          <img src="./images/pexels-photo-256468.jpg" />
-          {/* <img src="../../../../static/images/pexels-photo-256468.jpg" /> */}
-        </ImageWrapper>
-        </MenuItemSt>
-      </Link>
+      <LinksWrapper>
+        <Link to={'academy'}>
+          <MenuItemSt>Academy
+        
+          </MenuItemSt>
+        </Link>
      
+      </LinksWrapper>
+      
     </RegionMain>
   )
  };
