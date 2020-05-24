@@ -1,3 +1,14 @@
+
+interface Object {
+  [key: string]:  any | string | Object;
+}
+
+
+interface Theme {
+  [key: string]: Object;
+}
+
+
 export const theme = {
   colors:{
     base:{
@@ -8,7 +19,8 @@ export const theme = {
       l2:'#FFFFFF',
     },
     text:{
-      _:'#000000'
+      _:'#000000',
+      contrast:'#ffffff',
     },
     accent:{
       default:{
@@ -20,9 +32,9 @@ export const theme = {
         l2:'#FF7E9A',
       },
       sky:{
-        d:'#7A40B5',
-        _:'#964FDD',
-        l:'#C095EB',
+        d:'#6888BB',
+        _:'#9EBEF1',
+        l:'#C7D9F7',
       },
       kiwi:{
         d:'#94BF41',
@@ -49,4 +61,4 @@ export const theme = {
 
 
   }
-}
+} as Theme

@@ -19,7 +19,7 @@ export interface MenuProps {
 
 const Menu = (props:MenuProps): ReactElement => {
   return (
-    <RegionMain spaced>
+    <RegionMain>
       <Logo size={LogoSizes.small}/>
       <TitleSt>Menu</TitleSt>
       <LinksWrapper>

@@ -12,18 +12,15 @@ import {
   LessonCardContainerSt
 } from "./academy.styles";
 
-
 export interface AcademyProps {
   id?: string;
   location?: any;
 }
 
-
 const Academy = (props:AcademyProps): ReactElement => {
 
   return (
-    <RegionsWrapper router={props.location}>>
-
+    <RegionsWrapper router={props.location}>
       <Title>@Academy</Title>
       {
         blocksLessons && blocksLessons.map( (block:any, idxB: number) =>{
@@ -37,6 +34,7 @@ const Academy = (props:AcademyProps): ReactElement => {
                       <LessonCard 
                         key={'lesson_' + idxB + '_' + idxL } 
                         {...lessonProps} 
+                        big={( idxL === 0 && idxB=== 0)}
                         to={{pathname:'lesson/'+ lessonProps.id}}
                       />
                     )

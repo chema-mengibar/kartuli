@@ -12,8 +12,8 @@ export const lessonsCatalog = {
     image:'',
     title:'@Letters',
     description:'@Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    currentLessons:0,
-    totalLessons:33,
+    currentLessons:2,
+    totalLessons:10,
     block:'basics',
     color:'sky'
   },
@@ -22,8 +22,8 @@ export const lessonsCatalog = {
     image:'',
     title:'@Number',
     description:'@Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    currentLessons:0,
-    totalLessons:33,
+    currentLessons:5,
+    totalLessons:10,
     block:'basics',
     color:'kiwi' 
   },
@@ -32,8 +32,8 @@ export const lessonsCatalog = {
     image:'',
     title:'@Supermarkt',
     description:'@Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    currentLessons:0,
-    totalLessons:33,
+    currentLessons:8,
+    totalLessons:10,
     block:'lessons',
     color:'lila'
   }

@@ -13,7 +13,7 @@ type GeoAlphabet = {
 export const geoAbc = {
   'ani': {
     letter:'ა',
-    pron:'a',
+    pron:'tzu like english “words”',
     lat:'a',
   },
   'bani': {

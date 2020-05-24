@@ -1,24 +1,29 @@
 import React, {ReactElement} from 'react'
 
 import {Container} from '../../../styles/layout.styles'
-import NavHeader from '../../molecules/nav-header'
+import Logo from '../../atoms/logo'
+// import NavHeader from '../../molecules/nav-header'
 
 import {
- 	RegionHeaderStyled,
+  RegionHeaderSt,
+  LogoSt
 } from "./region-header.styles";
 
 
 export interface RegionHeaderProps {}
 
 
+//@todo:remove <NavHeader />  
+
 const RegionHeader = ({}:RegionHeaderProps): ReactElement => {
   return (
-    <RegionHeaderStyled role="banner">
+    <RegionHeaderSt role="banner">
       <Container>
-        Header
-        <NavHeader /> 
+        <LogoSt>  
+          <Logo negative /> 
+        </LogoSt>
       </Container>
-    </RegionHeaderStyled>
+    </RegionHeaderSt>
   )
  };
 

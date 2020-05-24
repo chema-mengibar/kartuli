@@ -1,16 +1,12 @@
 import React, {ReactElement} from 'react'
 
+import { theme } from '../../../styles/theme.styles'
 import ButtonBox, {ButtonBoxProps} from '../../atoms/button-box'
 import { IconGoto } from "../../atoms/icon/icon-goto";
 import { IconNext } from "../../atoms/icon/icon-next";
 import { IconPrevious } from "../../atoms/icon/icon-previous";
-import { theme } from '../../../styles/theme.styles'
 
-import {
-   NavFooterStyled,
-   ContainerStyled
-} from "./nav-footer.styles";
-
+import { ContainerSt } from "./nav-footer.styles"; 
 
 const IconsLib= {
   IconGoto : 'icon-goto',
@@ -26,32 +22,31 @@ export type NavFooterT = {
   items: ButtonBoxWithIconT[]
 }
 
-
 const NavFooter = ({
   items=[]
 }:NavFooterT): ReactElement => {
 
 const iconColor = theme.colors.text._
+const iconSize = 22
 
   return (
-    <NavFooterStyled id="nav-footer" role="navigation">
-      <ContainerStyled>
-        {
-          items && items.map( (item, idx ) =>  (
-              <ButtonBox 
-                key={`button-nav_${item.id}`}
-                id={item.id} 
-                label={item.label}
-                onClick={ ()=> item.onClick() }
-              > 
-                {item.icon === 'icon-next' && <IconNext color={iconColor} /> } 
-                {item.icon === 'icon-previous' && <IconPrevious color={iconColor} /> } 
-                {item.icon === 'icon-goto' && <IconGoto color={iconColor} /> } 
-              </ButtonBox>
-          ))
-        }
-      </ContainerStyled>
-    </NavFooterStyled>
+    <ContainerSt>
+      {
+        items && items.map( (item, idx ) =>  (
+          <ButtonBox 
+            key={`button-nav_${item.id}`}
+            id={item.id} 
+            label={item.label}
+            onClick={ ()=> item.onClick() }
+          > 
+            {item.icon === 'icon-next' && <IconNext size={iconSize} color={iconColor} /> } 
+            {item.icon === 'icon-previous' && <IconPrevious size={iconSize} color={iconColor} /> } 
+            {item.icon === 'icon-goto' && <IconGoto size={iconSize} color={iconColor} /> } 
+          </ButtonBox>
+        ))
+      }
+    </ContainerSt>
+
   )
  };
 

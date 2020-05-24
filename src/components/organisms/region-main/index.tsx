@@ -7,16 +7,14 @@ import {
 
 export interface RegionMainProps {
   id?: string;
-  spaced?: boolean;
   children: React.ReactNode
 }
 
 const RegionMain = ({
-  spaced=false,
   children
 }:RegionMainProps): ReactElement => {
   return (
-    <RegionMainStyled  role="main" withMargins={spaced}>
+    <RegionMainStyled  role="main">
       <Container>
         {children}
       </Container>

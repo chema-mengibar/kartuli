@@ -19,7 +19,7 @@ const RegionsWrapper = ({
   return (
     <>
       <RegionHeader />
-      <RegionMain spaced>
+      <RegionMain>
         {children}
       </RegionMain>
       <RegionFooter />

@@ -48,8 +48,12 @@ const ButtonBox = ({
           setClickBlock(true);
         }
       }}
-      disabled={disabled}
-      animationClick={animationClick}
+      className = {
+        [
+         (disabled ? 'disabled' : ''),
+          (animationClick ? 'animated-click': ''),
+        ].join(' ')
+      }
     >
       {children}
       {label && <Label>{label}</Label>}

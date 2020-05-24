@@ -17,9 +17,10 @@ type TletterExplanation = {
   [key in GeoLetterNames]: TExplanation
 }
 
+//@todo: add words
 export const letterExplanation = {
   'ani': {
-    word:'მაგალითი',
+    word:'არა',
   },
   'bani': {
     word:'მაგალითი',

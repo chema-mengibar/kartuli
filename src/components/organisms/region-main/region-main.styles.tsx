@@ -1,24 +1,9 @@
 import styled, { css } from "styled-components";
 
+// @todo: footer extra padding to scroll
+//import { footerHeight } from '../region-footer/region-footer.styles'
 
-import { headerHeight } from '../region-header/region-header.styles'
-import { footerHeight } from '../region-footer/region-footer.styles'
-
-export const RegionMainStyled = styled.main<{withMargins:boolean}>`
-  
+export const RegionMainStyled = styled.main`
   flex-grow: 1;
-
-  ${({withMargins})=>{
-
-    return withMargins ? 
-      css`
-        margin-top: ${headerHeight};
-        margin-bottom: ${footerHeight};
-      ` : 
-      css`
-        margin: 0;
-      `;
-  }}
-
-
+  padding: 70px 0 200px;  
 `;

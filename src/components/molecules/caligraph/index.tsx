@@ -21,7 +21,7 @@ const Caligraph = ( {letter}:CaligraphProps): ReactElement => {
     <CaligraphStyled>
       <Canvas>
         <Bar />
-        <Bar />
+        <Bar className="base"/>
         <Bar />
       </Canvas>
       <Letter>

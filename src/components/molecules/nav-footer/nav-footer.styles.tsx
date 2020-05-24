@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 
-import {ButtonBoxContainer} from '../../atoms/button-box/button-box.styles'
+import {Container} from '../../../styles/layout.styles'
 
-export const NavFooterStyled = styled.nav`
-  
-`;
+//@todo: check this
+//import {ButtonBoxContainer} from '../../atoms/button-box/button-box.styles'
 
-export const ContainerStyled = styled(ButtonBoxContainer)`
-
-
-`;
+export const ContainerSt = styled(Container)`
+  display: flex;
+  flex-direction:row;
+  width:100%;
+  height:100%;
+`

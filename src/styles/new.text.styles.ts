@@ -32,7 +32,7 @@ export const cardTitleCss = css`
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
-  line-height: 38px;
+  line-height: 28px;
 `;
 
 export const cardTitleSmallCss = css`
@@ -48,7 +48,7 @@ export const buttonCss = css`
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  line-height: 19px;
+  line-height: 14px;
   letter-spacing: 0.05em;
 `;
 
@@ -59,4 +59,21 @@ export const navLabelCss = css`
   font-size: 18px;
   line-height: 25px;
   text-align: center;
+`;
+
+
+export const tableCellCss = css`
+  font-family: Nunito;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+  text-align:center;
+`;
+
+export const pHeadlineCss = css`
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
 `;

@@ -3,9 +3,7 @@ import React, {ReactElement} from 'react'
 import {lessonsCatalog} from '../../../helpers/lessons/catalog'
 import RegionsWrapper from '../../organisms/regions-wrapper'
 
-import {
- 	LessonStyled,
-} from "./lesson.styles";
+// import {} from "./lesson.styles";
 
 
 export interface LessonProps {
@@ -17,7 +15,7 @@ export interface LessonProps {
 
 const Lesson = (props:LessonProps): ReactElement => {
 
-  // console.log( 'PROPS', props.location )
+  // console.log( 'PROPS', props.location ) // @todo: remove this, if not needed
   
   const lessonId = props.match.params.lessonId
   const exerciseId = props.match.params.exerciseId
@@ -26,9 +24,7 @@ const Lesson = (props:LessonProps): ReactElement => {
   
   return (
     <RegionsWrapper router={ {location: props.location, params: props.match.params} }>
-      <LessonStyled>
-        <LessonComponent params={{lessonId: lessonId, exerciseId:exerciseId }}/>
-      </LessonStyled>
+      <LessonComponent params={{lessonId: lessonId, exerciseId:exerciseId }}/>
     </RegionsWrapper>
   )
  };
