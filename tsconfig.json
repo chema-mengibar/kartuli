@@ -9,7 +9,11 @@
       "strict": false,
       "allowJs": true,
       "alwaysStrict":false,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "paths": {
+        "~/*": ["./src/*"]
+      },
   },
   "include": [ "src/**/*" ],
   "exclude": [

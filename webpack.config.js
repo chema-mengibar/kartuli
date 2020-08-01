@@ -23,7 +23,7 @@ module.exports = function (env, argv) {
     entry: [
       // 'webpack/hot/dev-server',
       // 'webpack-hot-middleware/client', // ?path=http://localhost:3000/__webpack_hmr
-      path.resolve(__dirname, 'src/index.jsx')
+      path.resolve(__dirname, 'src/index.tsx')
     ],
     output: {
       path: path.resolve(__dirname, 'public'),
@@ -32,6 +32,9 @@ module.exports = function (env, argv) {
     },
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js"],
+      alias: {
+        '~': path.resolve(__dirname, 'src'),
+      }
     },
     module: {
       rules: [
@@ -48,9 +51,10 @@ module.exports = function (env, argv) {
     },
     plugins: [
       new webpack.DefinePlugin({
-        ___SUBDIR___: JSON.stringify(render.subDir)
+        ___SUBDIR___: JSON.stringify(render.subDir),
+        'process.env.NODE_ENV': JSON.stringify(nodeEnv)
       }),
-      // new webpack.HotModuleReplacementPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(
         {
           template: "./src/index.html",

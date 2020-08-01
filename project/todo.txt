@@ -1,0 +1,21 @@
+
+- Manifest
+  manifest.json in index.html
+  https://www.a-coding-project.de/ratgeber/pwa/manifest-json
+
+- HMR hot-reload, right configured?
+  webpack config
+  App.jsx
+
+- Theme
+https://medium.com/@rossbulat/react-dark-mode-with-styled-theming-and-context-57557de6400
+https://medium.com/@rossbulat/creating-themes-in-react-with-styled-components-6fce744b4e54
+https://dev.to/aromanarguello/how-to-use-themes-in-styled-components-49h
+
+- theme variants
+https://spectrum.chat/styled-system/general/dealing-with-multiple-variants~b808556e-80e9-4c8e-be3f-dde9ae186c44
+https://jamie.build/styled-theming.html
+
+
+- css 
+https://www.smashingmagazine.com/2020/05/styling-components-react/

@@ -123,7 +123,7 @@
     {
       "type": "page",
       "label": "intro",
-      "progress": "imports-error",
+      "progress": "imports",
       "id": "node-1575821756014"
     },
     {
@@ -147,13 +147,13 @@
     {
       "type": "organism",
       "label": "lesson-letters",
-      "progress": "created",
+      "progress": "planned",
       "id": "node-1577722527855"
     },
     {
       "type": "organism",
       "label": "exam-letters",
-      "progress": "created",
+      "progress": "planned",
       "id": "node-1581275725173"
     },
     {
@@ -173,6 +173,18 @@
       "label": "spinner",
       "progress": "created",
       "id": "node-1588511763281"
+    },
+    {
+      "type": "organism",
+      "label": "lesson-colors",
+      "progress": "planned",
+      "id": "node-1594760555909"
+    },
+    {
+      "type": "organism",
+      "label": "trainer-colors",
+      "progress": "planned",
+      "id": "node-1594760819529"
     }
   ],
   "tree": [
